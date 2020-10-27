@@ -270,7 +270,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   private registerBookEvent(seatImageNode: Image, booked: boolean, id: number) {
-    seatImageNode.on('mousedown touchstart', () => {
+    seatImageNode.on('click tap', () => {
       if (booked) {
         return;
       }
