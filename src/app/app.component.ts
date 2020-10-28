@@ -280,13 +280,12 @@ export class AppComponent implements AfterViewInit {
         const seatIndex = this.seatLocationList.findIndex(seat => seat.id === id);
         const bookedSeat = { ...this.seatLocationList[seatIndex], booked: true };
         this.seatLocationList = [
-          ...this.seatLocationList.slice(0, seatIndex + 1),
+          ...this.seatLocationList.slice(0, seatIndex),
           bookedSeat,
-          ...this.seatLocationList.slice(seatIndex)
+          ...this.seatLocationList.slice(seatIndex + 1)
         ];
         this.seatLayer.destroyChildren();
         this.drawSeat();
-        this.stage.draw();
       }
     });
   }
